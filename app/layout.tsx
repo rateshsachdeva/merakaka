@@ -1,5 +1,6 @@
 Import { ReactNode } from 'react';
 import SessionProviderWrapper from './SessionProviderWrapper';
+import ClientLayout from './ClientLayout';
 
 export const metadata = {
   title: 'Merakaka',
