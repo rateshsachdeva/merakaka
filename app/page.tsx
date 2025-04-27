@@ -1,26 +1,22 @@
 'use client';
 
-import Link from 'next/link';
-import { useSession } from 'next-auth/react';
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const { data: session, status } = useSession();
   const router = useRouter();
 
   useEffect(() => {
-    if (status === 'authenticated') {
-      router.push('/chat'); // Redirect to chat if logged in
+    if (status === "authenticated") {
+      router.push("/guest-chat");  // or wherever your dashboard is
     }
   }, [status, router]);
 
-  if (status === 'loading') {
-    return (
-      <main className="flex items-center justify-center min-h-screen bg-black text-white">
-        <p>Loading...</p>
-      </main>
-    );
+  if (status === "loading") {
+    return <div className="text-center mt-10">Loading...</div>;
   }
 
   return (
