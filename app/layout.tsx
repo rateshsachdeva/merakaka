@@ -1,6 +1,5 @@
-'use client';
-
 import { SessionProvider } from 'next-auth/react';
+import './globals.css';
 
 export const metadata = {
   title: 'Merakaka',
@@ -15,10 +14,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <SessionProvider>
+        <SessionWrapper>
           {children}
-        </SessionProvider>
+        </SessionWrapper>
       </body>
     </html>
   );
+}
+
+// 👇 Add this small client component INSIDE layout file
+function SessionWrapper({ children }: { children: React.ReactNode }) {
+  'use client';
+
+  return <SessionProvider>{children}</SessionProvider>;
 }
