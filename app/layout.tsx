@@ -1,5 +1,5 @@
 import { SessionProvider } from 'next-auth/react';
-import './globals.css';
+import './[locale]/globals.css';
 
 export const metadata = {
   title: 'Merakaka',
