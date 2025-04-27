@@ -1,21 +1,20 @@
+import { ReactNode } from 'react';
 import SessionProviderWrapper from './SessionProviderWrapper';
+import ClientLayout from './ClientLayout';
 
 export const metadata = {
-  metadataBase: new URL('https://merakaka.vercel.app'),
   title: 'Merakaka',
   description: 'Mom-focused AI chatbot',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
         <SessionProviderWrapper>
-          {children}
+          <ClientLayout>
+            {children}
+          </ClientLayout>
         </SessionProviderWrapper>
       </body>
     </html>
