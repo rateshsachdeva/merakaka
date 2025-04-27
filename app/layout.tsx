@@ -1,6 +1,7 @@
 import SessionProviderWrapper from './SessionProviderWrapper';
 
 export const metadata = {
+  metadataBase: new URL('https://merakaka.vercel.app'),
   title: 'Merakaka',
   description: 'Mom-focused AI chatbot',
 };
