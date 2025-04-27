@@ -1,6 +1,4 @@
-'use client';
-
-import { SessionProvider } from 'next-auth/react';
+import { Providers } from './providers';
 
 export const metadata = {
   title: 'Merakaka',
@@ -15,9 +13,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <SessionProvider>
+        <Providers>
           {children}
-        </SessionProvider>
+        </Providers>
       </body>
     </html>
   );
