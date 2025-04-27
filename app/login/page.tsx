@@ -22,19 +22,19 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen p-6">
-      <h1 className="text-3xl font-bold mb-6">Login to Merakaka</h1>
+    <main className="flex flex-col items-center justify-center min-h-screen bg-black text-white p-6">
+      <h1 className="text-4xl font-extrabold mb-8">Login to Merakaka</h1>
 
       <button
         onClick={handleGoogleLogin}
-        className="px-6 py-3 bg-blue-500 text-white rounded-md mb-4"
+        className="w-full max-w-xs px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow transition duration-300 mb-4"
       >
         Sign in with Google
       </button>
 
       <button
         onClick={handleEmailLogin}
-        className="px-6 py-3 bg-green-500 text-white rounded-md mb-4"
+        className="w-full max-w-xs px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg shadow transition duration-300 mb-4"
       >
         Sign in with Email
       </button>
@@ -45,14 +45,15 @@ export default function LoginPage() {
           id="rememberMe"
           checked={rememberMe}
           onChange={() => setRememberMe(!rememberMe)}
+          className="h-5 w-5"
         />
-        <label htmlFor="rememberMe" className="text-gray-700">
+        <label htmlFor="rememberMe" className="text-white">
           Remember Me
         </label>
       </div>
 
-      <Link href="/">
-        <p className="text-sm text-blue-500 mt-4">← Back to Home</p>
+      <Link href="/" className="mt-6">
+        <p className="text-sm text-blue-400 hover:text-blue-300">← Back to Home</p>
       </Link>
     </main>
   );
