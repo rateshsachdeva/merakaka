@@ -1,21 +1,18 @@
-import { Providers } from './providers';
+Import { ReactNode } from 'react';
+import SessionProviderWrapper from './SessionProviderWrapper';
 
 export const metadata = {
   title: 'Merakaka',
   description: 'Mom-focused AI chatbot',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <Providers>
+        <SessionProviderWrapper>
           {children}
-        </Providers>
+        </SessionProviderWrapper>
       </body>
     </html>
   );
